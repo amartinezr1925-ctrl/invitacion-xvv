@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XV Jade Aislyn</title>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+body{
+  margin:0;
+  font-family:'Playfair Display', serif;
+  background:linear-gradient(to bottom,#eaf4fb,#f5efe6);
+}
+
+/* ===== INICIO ===== */
+.pantalla-inicial{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:#eaf4fb;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:10;
+}
+.fondo-cinta{
+  position:absolute;
+  width:100%;
+  height:160px;
+  background:linear-gradient(90deg,#c7dceb,#6b8fb8,#c7dceb);
+  top:50%;
+  transform:translateY(-50%);
+}
+.tarjeta{
+  position:relative;
+  background:#f5efe6;
+  width:80vw;
+  height:80vw;
+  max-width:420px;
+  max-height:420px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  border-radius:15px;
+  cursor:pointer;
+  animation:flotar 3s infinite ease-in-out;
+}
+.tarjeta::before{
+  content:"";
+  position:absolute;
+  top:20px;
+  left:20px;
+  right:20px;
+  bottom:20px;
+  border:4px solid #c8a96a;
+  border-radius:10px;
+}
+.tarjeta h1{
+  color:#6b8fb8;
+  font-size:42px;
+  font-family:'Alex Brush', cursive;
+}
+@keyframes flotar{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-10px);}
+  100%{transform:translateY(0);}
+}
+
+/* ===== CONTENIDO ===== */
+.contenedor{
+  display:none;
+  max-width:500px;
+  margin:auto;
+  background:#f0f8ff;
+  padding:25px;
+  text-align:center;
+  padding-bottom:120px;
+  border-radius:20px;
+}
+
+/* TITULOS */
+.nombre{
+  font-size:60px;
+  font-weight:800;
+  color:#6b8fb8;
+  font-family:'Alex Brush', cursive;
+  margin-top:10px;
+}
+.frase{
+  font-size:16px;
+  color:#555;
+  margin:15px 0;
+}
+.xv{
+  font-family:'Alex Brush', cursive;
+  font-size:50px;
+  color:#d4af37;
+}
+.romano{
+  font-size:70px;
+  font-family:'Playfair Display', serif;
+  color:#d4af37;
+  letter-spacing:4px;
+  position:relative;
+  display:inline-block;
+  overflow:hidden;
+}
+.romano::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.9),transparent);
+  animation:brillo 2.5s infinite;
+}
+@keyframes brillo{
+  0%{ left:-100%; }
+  100%{ left:100%; }
+}
+
+/* IMAGENES */
+img{
+  width:100%;
+  border-radius:15px;
+  margin:20px 0;
+}
+
+/* PRIMERA IMAGEN CON MARCO */
+.primera-imagen{
+  border:6px solid #d4af37;
+  border-radius:25px;
+  box-shadow:0 12px 25px rgba(0,0,0,0.3);
+  margin:20px 0;
+}
+
+/* PEQUEÑAS IMAGENES */
+.pequena{
+  width:60%;
+  max-width:250px;
+  margin:15px auto;
+  display:block;
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* PADRES */
+.padres-linea{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:20px 0;
+  gap:20px;
+}
+.lado-izq,.lado-der{
+  width:40%;
+  font-size:16px;
+}
+.linea-vertical{
+  width:1px;
+  height:60px;
+  background:#555;
+}
+
+/* SECCIONES */
+.seccion{
+  margin:40px 0;
+}
+
+/* BOTONES */
+.boton{
+  display:block;
+  width:80%;
+  margin:15px auto;
+  padding:12px;
+  border-radius:25px;
+  background:linear-gradient(135deg,#87CEEB,#6b8fb8);
+  color:white;
+  text-decoration:none;
+}
+
+/* CONTADOR */
+.contador{
+  background:linear-gradient(135deg,#d4af37,#f7e27b);
+  padding:15px;
+  border-radius:25px;
+  display:flex;
+  justify-content:space-around;
+  margin-top:15px;
+}
+.tiempo span{
+  display:block;
+  font-weight:bold;
+}
+
+/* MESA DE REGALOS PREMIUM */
+.mesa-regalos{
+  background:linear-gradient(135deg,#fff8e1,#f7e27b);
+  padding:25px;
+  border-radius:20px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.15);
+  border:2px solid #d4af37;
+  position:relative;
+  overflow:hidden;
+  margin-top:30px;
+}
+.mesa-regalos::before{
+  content:"💌";
+  position:absolute;
+  font-size:60px;
+  opacity:0.1;
+  top:10px;
+  right:15px;
+}
+.mesa-regalos b{
+  font-size:22px;
+  color:#b8962e;
+}
+.mesa-regalos .frase{
+  color:#444;
+  font-size:15px;
+}
+/* ===== ALBUM ===== */
+.album-arriba{
+  width:80%;
+  max-width:300px;
+  margin:20px auto;
+  display:block;
+  border-radius:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+.album-abajo{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+}
+.album-abajo img{
+  width:50%;
+  border-radius:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+</style>
+</head>
+
+<body>
+
+<!-- MÚSICA -->
+<audio id="musica" loop>
+  <source src="cancion.mp3" type="audio/mpeg">
+</audio>
+
+<button onclick="document.getElementById('musica').play()" 
+style="padding:15px; font-size:18px; border-radius:10px;">
+✨ Abrir invitación ✨
+</button>
+</audio>
+
+<!-- INICIO -->
+<div class="pantalla-inicial" id="inicio">
+<div class="fondo-cinta"></div>
+<div class="tarjeta" onclick="abrirInvitacion()">
+<h1>Abrir<br>Invitación</h1>
+</div>
+</div>
+
+<!-- INVITACIÓN -->
+<div class="contenedor" id="invitacion">
+
+<!-- NOMBRE -->
+<div class="nombre">Jade Aislyn</div>
+
+<div class="frase">Con la bendición de Dios y el amor de mi familia, celebro este día tan especial</div>
+
+<!-- PRIMERA IMAGEN CON MARCO -->
+<img src="https://i.postimg.cc/MZCbQKqb/Whats-App-Image-2026-04-07-at-12-44-16-PM-(1).jpg" class="primera-imagen"> <!\\Marco mas grueso\\>
+
+<!-- MIS y XV -->
+<div class="xv">
+<span style="display:block; font-size:40px; color:#d4af37;">Mis</span>
+<span class="romano">XV</span>
+</div>
+
+<!-- IMAGEN PEQUEÑA ABAJO DE "MIS" -->
+<img src="https://i.postimg.cc/y8RMy5Cw/7-metamorfosis.jpg" class="pequena"> <!\\esta no es foto de la Xv es una ilustracion\\>
+
+<div class="frase">Un momento mágico que guardaré por siempre en mi corazón ✨</div>
+
+<!-- IMAGEN AJUSTADA -->
+<img src="https://i.postimg.cc/xTrzqJgT/quince-Ultima.jpg" style="width:80%; max-width:300px; border-radius:15px; margin:20px auto; display:block;">
+
+<!-- PADRES -->
+<div class="seccion">
+<b style="font-size:20px; color:#6b8fb8;">Con el amor de mis padres</b>
+<div class="frase">Gracias por guiar cada uno de mis pasos y hacer de mí quien soy hoy 💕</div>
+<div class="padres-linea">
+<div class="lado-izq">Juan Molina Gonzales<br>Leonor Díaz Morales</div>
+<div class="linea-vertical"></div>
+<div class="lado-der">Yair Sanchez Díaz<br>Leticia Rosas Ortiz</div>
+</div>
+</div>
+
+<!-- IMAGEN ANTES DE PADRINOS -->
+<img src="https://i.postimg.cc/dQHcsrBY/marusa-gorjup-howl-and-sophie-poster-2.jpg" class="pequena"> <!me gusatria mas pequeña y difuminada>
+
+<!-- PADRINOS -->
+<div class="seccion">
+<b>Padrinos</b><br><br>
+<div class="frase">Gracias por acompañarme y ser parte de este momento tan importante 💫</div>
+Juan Antonio Molina Díaz <br> & <br>Jeniffer Estrada Escobar
+</div>
+
+<!-- IMAGEN DESPUÉS DE PADRINOS -->
+<img src="https://i.postimg.cc/7ZGfqx8V/Whats-App-Image-2026-04-07-at-12-06-52-PM.jpg" class="pequena">
+
+<!-- FECHA -->
+<div class="seccion">
+<b>Celebremos juntos el día</b><br><br>
+<div class="frase">Te invito a compartir conmigo esta noche inolvidable llena de alegría y amor</div>
+25 de abril del 2026
+
+<!-- CONTADOR -->
+<div class="contador">
+<div class="tiempo"><span id="dias"></span>Días</div>
+<div class="tiempo"><span id="horas"></span>Horas</div>
+<div class="tiempo"><span id="minutos"></span>Min</div>
+<div class="tiempo"><span id="segundos"></span>Seg</div>
+</div>
+
+<!-- IMAGEN DESPUÉS DE CONTADOR -->
+<img src="https://i.postimg.cc/RVyvQyq8/Whats-App-Image-2026-04-07-at-2-14-53-PM.jpg" class="pequena">
+</div>
+
+<!-- IGLESIA -->
+<div class="seccion">
+<div class="frase">Acompáñame a dar gracias a Dios por este hermoso momento 🙏</div>
+<img src="https://i.postimg.cc/14xf1MYk/Iglesia.jpg" style="width:80%; max-width:300px; border-radius:15px; margin:20px auto; display:block;">
+<b>Ceremonia Religiosa</b><br><br>
+<a class="boton" href="https://maps.app.goo.gl/LBAXHQ5UhDVv8VPr5">Ver mapa</a>
+Av. Ricardo Flores Magón s/n, Santiago, 56615 Valle de Chalco Solidaridad, Méx.<br> 3:00pm
+<!-- IMAGEN ABAJO DE IGLESIA -->
+<img src="https://i.postimg.cc/q705XvLL/Whats-App-Image-2026-04-07-at-1-16-26-PM.jpg" class="pequena"> <!\\esta no es foto de la Xv es una ilustracion\\>
+</div>
+
+<!-- RECEPCION -->
+<div class="seccion">
+<div class="frase">Después de la ceremonia, celebremos juntos con música, alegría y mucho amor 🎉</div>
+<b>Recepción</b><br><br>
+<a class="boton" href="https://maps.app.goo.gl/nPpzxFYqtQE2ZFY2A">Ver mapa</a>
+Nte 23 43, Santiago, 56615 Valle de Chalco Solidaridad, Méx.<br> 6:00pm
+<!-- IMAGEN ABAJO DE RECEPCIÓN -->
+<img src="https://i.postimg.cc/Wb7BWy9y/Whats-App-Image-2026-04-07-at-1-21-35-PM.jpg" class="pequena">
+</div>
+
+<!-- MESA DE REGALOS -->
+<div class="seccion mesa-regalos">
+<b>Mesa de Regalos</b><br><br>
+<div class="frase">
+Tu presencia es el mejor regalo, pero si deseas tener un detalle conmigo, 
+agradezco de corazón una <b>lluvia de sobres</b> 💌✨ <br>
+</div>
+
+</div>
+<!-- 📸 ALBUM -->
+<div class="seccion">
+<b style="font-size:22px; color:#6b8fb8;">Álbum de Fotos</b>
+
+<img src="https://i.postimg.cc/vZGBJWHd/Whats-App-Image-2026-04-07-at-12-44-17-PM-(1).jpg" class="album-arriba">
+
+<div class="album-abajo">
+  <img src="https://i.postimg.cc/fyp2r63K/Whats-App-Image-2026-04-07-at-1-23-28-PM.jpg">
+  <img src="https://i.postimg.cc/44Djw9zf/Whats-App-Image-2026-04-07-at-1-42-10-PM-(1).jpg">
+  <img src="https://i.postimg.cc/R04Py1F3/Whats-App-Image-2026-04-07-at-1-42-10-PM.jpg">
+</div>
+</div>
+</div>
+
+
+<script>
+function abrirInvitacion(){
+  document.getElementById("inicio").style.display="none";
+  document.getElementById("invitacion").style.display="block";
+}
+
+function actualizarContador(){
+  const fechaEvento = new Date("April 25, 2026 16:00:00").getTime();
+  const ahora = new Date().getTime();
+  const diff = fechaEvento - ahora;
+  document.getElementById("dias").innerText = Math.floor(diff/(1000*60*60*24));
+  document.getElementById("horas").innerText = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+  document.getElementById("minutos").innerText = Math.floor((diff%(1000*60*60))/(1000*60));
+  document.getElementById("segundos").innerText = Math.floor((diff%(1000*60))/1000);
+}
+
+setInterval(actualizarContador,1000);
+</script>
+</body>
+</html>
